@@ -18,7 +18,7 @@ const Couter = () => {
 
   return (
     <div>
-      this site is created in {count > 3 ? <h1>India</h1> : <h1>{name}</h1>}
+      this site i s created in {count > 3 ? <h1>India</h1> : <h1>{name}</h1>}
       <br />
       {count}
       <br />
