@@ -11,7 +11,7 @@ const UserinputPage = () => {
       return;
     }
     //send this name to backend
-    setName("");
+    setName("s");
   };
   return (
     <div>
