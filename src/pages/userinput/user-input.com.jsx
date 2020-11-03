@@ -4,7 +4,7 @@ const UserinputPage = () => {
   const [name, setName] = useState("");
 
   const handleSubmit = (event) => {
-    event.preventDefault();
+    // event.preventDefault();
 
     if (name.length < 5) {
       alert("name value must be gretaer then 5");

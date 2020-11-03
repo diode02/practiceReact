@@ -1,11 +1,9 @@
-const { default: Couter } = require("./components/counter/counter.com");
-const { default: UserinputPage } = require("./pages/userinput/user-input.com");
+import CalWithForm from "./pages/cal-with-form/cal-with-form.com";
 
 function App() {
   return (
     <div className="App">
-      {/* <Couter /> */}
-      <UserinputPage />
+      <CalWithForm />
     </div>
   );
 }
