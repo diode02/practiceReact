@@ -3,11 +3,14 @@
 // default: CalculatorPage,
 // } = require("./pages/calculator/calculator.com");
 // const { default: UserinputPage } = require("./pages/userinput/user-input.com");
-import CalWithform from "./pages/cal-with-form/cal-with-form.com";
+
+const { default: LoginForm } = require("./pages/login-form/login-form");
+
+// import CalWithform from "./pages/cal-with-form/cal-with-form.com";
 function App() {
   return (
     <div className="App">
-      <CalWithform />
+      <LoginForm />
     </div>
   );
 }
