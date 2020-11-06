@@ -1,10 +1,19 @@
 import React, { useState } from "react";
-import { numbers, sty2 } from "../../style/style";
-const Funtions = () => {
+import { numbers } from "./calculator.sty";
+import CalForm from "../../components/calform/calform";
+const CalWithForm = () => {
   const [String, setString] = useState("");
   const [Ans, setAns] = useState(0);
 
-  const handleEqual = () => {
+  const handleExpressionChange = (event) => {
+    setString(event.target.value);
+  };
+  const handleSubmit = (event) => {
+    if (String.length < 2 || isNaN(String.charAt(String.length - 1))) {
+      alert("Not a valid Expression");
+      return;
+    }
+
     setAns(eval(String));
   };
   const handleReset = () => {
@@ -13,15 +22,14 @@ const Funtions = () => {
   };
   return (
     <div>
+      <CalForm
+        String={String}
+        handleExpressionChange={handleExpressionChange}
+        handleSubmit={handleSubmit}
+      />
       <h1>Expression: {String}</h1>
       <br />
       <h1>FINAL ANSWER={Ans}</h1>
-      <br />
-      {/* <form action={handleEqual}>
-        <input type="text"/>
-        <input type="submit"/>
-    </form> */}
-
       <br />
       <button
         style={numbers}
@@ -138,7 +146,7 @@ const Funtions = () => {
       >
         /
       </button>
-      <button style={numbers} onClick={handleEqual}>
+      <button style={numbers} onClick={handleSubmit}>
         =
       </button>
       <button style={numbers} onClick={handleReset}>
@@ -149,4 +157,4 @@ const Funtions = () => {
   );
 };
 
-export default Funtions;
+export default CalWithForm;
